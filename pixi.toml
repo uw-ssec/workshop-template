@@ -1,0 +1,11 @@
+[workspace]
+authors = ["Landung 'Don' Setiawan <landungs@uw.edu>"]
+channels = ["conda-forge"]
+name = "workshop-template"
+platforms = ["linux-64", "osx-64", "osx-arm64"]
+version = "2025.06.26"
+description = "A template for creating a workshop with Pixi."
+
+[tasks]
+
+[dependencies]
