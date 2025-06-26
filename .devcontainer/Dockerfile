@@ -12,8 +12,8 @@ ENV VSCODE_HOME=/home/vscode \
     VSCODE_USER=vscode \
     PIXI_ENV=${PIXI_ENV} \
     SHELL=/bin/bash
+
 USER vscode
-WORKDIR ${VSCODE_HOME}
 
 RUN echo 'eval "$(pixi completion -s bash)"' >> ${VSCODE_HOME}/.bashrc
 
