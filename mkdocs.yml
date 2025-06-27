@@ -1,0 +1,80 @@
+site_name: Workshop Website
+site_description: UW SSEC Workshop Template Example Site
+site_url: https://uw-ssec-workshop.readthedocs.io/  # Required for the llmstxt plugin to work.
+
+
+# Repository
+repo_name: uw-ssec/workshop-template
+repo_url: https://github.com/uw-ssec/workshop-template
+
+plugins:
+- search
+- awesome-nav
+- mike:
+    alias_type: symlink
+    canonical_version: latest
+  # llmstxt must come after the mike plugin:
+- llmstxt:
+    full_output: llms-full.txt
+    sections:
+      Usage documentation:
+      - index.md
+
+# Configuration
+theme:
+  name: material
+  features:
+    - toc.integrate
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.footer
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+      primary: indigo
+      accent: indigo
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+      primary: indigo
+      accent: amber
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: 'assets/images/logo.png'
+
+# Extensions
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
+
+extra:
+  version:
+    provider: mike

@@ -6,6 +6,24 @@ platforms = ["linux-64", "osx-64", "osx-arm64"]
 version = "2025.06.26"
 description = "A template for creating a workshop with Pixi."
 
+[environments]
+docs = ["docs", "py313"]
+
 [tasks]
 
-[dependencies]
+# Website dependencies as docs feature.
+# These are the dependencies needed
+# to build the documentation website.
+[feature.docs.pypi-dependencies]
+mkdocs-material = "*"
+mkdocs-llmstxt = "*"
+mkdocs-awesome-nav = "*"
+mike = "*"
+
+# These are python dependencies as features.
+# If you want to add a new python feature,
+# follow the pattern of `py{version}`.
+# The version should be the Python version
+# that the feature, e.g. `py313` for Python 3.13.
+[feature.py313.dependencies]
+python = ">=3.13.5,<3.14"
